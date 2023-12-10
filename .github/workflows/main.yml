@@ -16,7 +16,9 @@ jobs:
         persist-credentials: false
         fetch-depth: 0
     - name: Update enmity.json
-      run: echo "`jq '.apps[0].versions[0].version="${{ inputs.discord_version }}"' enmity.json`" > enmity.json
+      run: |
+       echo "`jq '.apps[0].versions[0].version="${{ inputs.discord_version }}"' enmity.json`" > enmity.json
+       echo "`jq '.apps[0].version="${{ inputs.discord_version }}"' enmity.json`" > enmity.json
     - name: Commit files
       run: |
         git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
