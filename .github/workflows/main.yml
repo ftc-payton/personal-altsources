@@ -19,6 +19,8 @@ jobs:
       run: |
        echo "`jq '.apps[0].versions[0].version="${{ inputs.discord_version }}"' enmity.json`" > enmity.json
        echo "`jq '.apps[0].version="${{ inputs.discord_version }}"' enmity.json`" > enmity.json
+       echo "`jq '.apps[1].versions[0].version="${{ inputs.discord_version }}"' enmity.json`" > enmity.json
+       echo "`jq '.apps[1].version="${{ inputs.discord_version }}"' enmity.json`" > enmity.json
     - name: Commit files
       run: |
         git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
