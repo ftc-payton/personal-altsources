@@ -1,0 +1,29 @@
+on:
+  workflow_dispatch:
+    inputs:
+      discord_version:
+        description: "The version of Discord"
+        default: "v"
+        required: true
+        type: string
+jobs:
+  build:
+    name: Change Version
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+        fetch-depth: 0
+    - name: Update enmity.json
+      run: echo "`jq '.apps[0].versions[0].version="${{ inputs.discord_version }}"' enmity.json`" > enmity.json
+    - name: Commit files
+      run: |
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git commit -a -m "Update enmity.json"
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.PERSONAL_TOKEN }}
+        branch: ${{ github.ref }}
