@@ -2,8 +2,13 @@ on:
   workflow_dispatch:
     inputs:
       discord_version:
-        description: "The version of Discord"
-        default: "v"
+        description: "Discord Version"
+        default: ""
+        required: true
+        type: string
+      current_date:
+        description: "Date (yyyy-mm-dd)"
+        default: ""
         required: true
         type: string
 jobs:
@@ -21,6 +26,10 @@ jobs:
        echo "`jq '.apps[0].version="${{ inputs.discord_version }}"' enmity.json`" > enmity.json
        echo "`jq '.apps[1].versions[0].version="${{ inputs.discord_version }}"' enmity.json`" > enmity.json
        echo "`jq '.apps[1].version="${{ inputs.discord_version }}"' enmity.json`" > enmity.json
+       echo "`jq '.apps[0].versions[0].date="${{ inputs.current_date }}"' enmity.json`" > enmity.json
+       echo "`jq '.apps[0].versionDate="${{ inputs.current_date }}"' enmity.json`" > enmity.json
+       echo "`jq '.apps[1].versions[0].date="${{ inputs.current_date }}"' enmity.json`" > enmity.json
+       echo "`jq '.apps[1].versionDate="${{ inputs.current_date }}"' enmity.json`" > enmity.json
     - name: Commit files
       run: |
         git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
