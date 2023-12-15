@@ -4,7 +4,7 @@
   "sourceURL": "https://raw.githubusercontent.com/ftc-payton/personal-altsources/main/bhtwitter.json",
   "apps": [
     {
-      "name": "BHTwitter (X)",
+      "name": "X",
       "bundleIdentifier": "com.atebits.Tweetie2",
       "developerName": "BandarHL",
       "subtitle": "A modification for X (formerly Twitter)",
