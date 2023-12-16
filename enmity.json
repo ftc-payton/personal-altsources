@@ -18,42 +18,16 @@
         {
           "version": "209.0",
           "date": "2023-12-11",
-          "localizedDescription": "https://github.com/enmity-mod/tweak/releases/tag/v2.2.6",
-          "downloadURL": "https://github.com/enmity-mod/tweak/releases/latest/download/enmity.ipa",
+          "localizedDescription": "https://github.com/acquitelol/rosiecord/",
+          "downloadURL": "https://github.com/acquitelol/rosiecord/releases/download/rosiecord_209/Rosiecord-209_GGSans-Font.ipa",
           "size": 94194608
         }
       ],
       "version": "209.0",
       "versionDate": "2023-12-11",
-      "versionDescription": "https://github.com/enmity-mod/tweak/releases/tag/v2.2.6",
-      "downloadURL": "https://github.com/enmity-mod/tweak/releases/latest/download/enmity.ipa",
+      "versionDescription": "https://github.com/acquitelol/rosiecord/",
+      "downloadURL": "https://github.com/acquitelol/rosiecord/releases/download/rosiecord_209/Rosiecord-209_GGSans-Font.ipa",
       "size": 94194608
-    },
-    {
-      "name": "Enmity (Dev)",
-      "bundleIdentifier": "com.hammerandchisel.discord.dev",
-      "developerName": "Enmity Team",
-      "subtitle": "The power of addons, all in your hand.",
-      "localizedDescription": "Add plugins and themes to Discord!",
-      "iconURL": "https://files.enmity.app/icon-altstore.png",
-      "screenshotURLs": [
-        "https://repo.enmity.app/banner.png"
-      ],
-      "tintColor": "6D00FF",
-      "versions": [
-        {
-          "version": "209.0",
-          "date": "2023-12-11",
-          "localizedDescription": "https://github.com/enmity-mod/tweak/releases/tag/v2.2.6",
-          "downloadURL": "https://github.com/enmity-mod/tweak/releases/latest/download/Enmity.Development.ipa",
-          "size": 94194760
-        }
-      ],
-      "version": "209.0",
-      "versionDate": "2023-12-11",
-      "versionDescription": "https://github.com/enmity-mod/tweak/releases/tag/v2.2.6",
-      "downloadURL": "https://github.com/enmity-mod/tweak/releases/latest/download/Enmity.Development.ipa",
-      "size": 94194760
-    }
+    }   
   ]
 }
