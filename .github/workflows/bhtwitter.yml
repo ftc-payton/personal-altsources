@@ -30,7 +30,7 @@ jobs:
       with:
         persist-credentials: false
         fetch-depth: 0
-    - name: Update enmity.json
+    - name: Update bhtwitter.json
       run: |
        echo "`jq '.apps[0].versions[0].version="${{ inputs.x_version }}"' bhtwitter.json`" > bhtwitter.json
        echo "`jq '.apps[0].version="${{ inputs.x_version }}"' bhtwitter.json`" > bhtwitter.json
