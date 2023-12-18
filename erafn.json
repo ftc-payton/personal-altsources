@@ -1,0 +1,31 @@
+{
+  "name": "EraFN",
+  "identifier": "ftc-payton.erafn-altsource",
+  "sourceURL": "https://raw.githubusercontent.com/ftc-payton/personal-altsources/main/erafn.json",
+  "apps": [
+    {
+      "name": "Project Era",
+      "bundleIdentifier": "com.chairentertainment.Fortnite",
+      "developerName": "Era Team",
+      "subtitle": "Relive OG Fortnite!",
+      "localizedDescription": "Relive OG Fortnite using Project Era's servers!",
+      "iconURL": "",
+      "screenshotURLs": [],
+      "tintColor": "ADD8E6",
+      "versions": [
+        {
+          "version": "7.40.2",
+          "date": "2023-12-18",
+          "localizedDescription": "Era Season 7 is here!",
+          "downloadURL": "https://cdn.erafn.org/ProjectEra.ipa",
+          "size": 10000000000
+        }
+      ],
+      "version": "7.40.2",
+      "versionDate": "2023-12-18",
+      "versionDescription": "Era Season 7 is here!",
+      "downloadURL": "https://cdn.erafn.org/ProjectEra.ipa",
+      "size": 10000000000
+    }
+  ]
+}
