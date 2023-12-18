@@ -1,0 +1,64 @@
+on:
+  workflow_dispatch:
+    inputs:
+      era_version:
+        description: "Era Version"
+        default: ""
+        required: true
+        type: string
+      current_date:
+        description: "Date (yyyy-mm-dd)"
+        default: ""
+        required: true
+        type: string
+      download_url:
+        description: "Era Download URL"
+        default: "https://cdn.erafn.org/ProjectEra.ipa"
+        required: true
+        type: string
+      update_description:
+        description: "Update Description"
+        default: ""
+        required: true
+        type: string
+      tint_color:
+        description: "Tint Color (HEX)"
+        default: ""
+        required: true
+        type: string
+      icon_url:
+        description: "Icon URL"
+        default: ""
+        required: true
+        type: string
+jobs:
+  build:
+    name: Change Version
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+        fetch-depth: 0
+    - name: Update erafn.json
+      run: |
+       echo "`jq '.apps[0].versions[0].version="${{ inputs.x_version }}"' erafn.json`" > erafn.json
+       echo "`jq '.apps[0].version="${{ inputs.x_version }}"' erafn.json`" > erafn.json
+       echo "`jq '.apps[0].versions[0].date="${{ inputs.current_date }}"' erafn.json`" > erafn.json
+       echo "`jq '.apps[0].versionDate="${{ inputs.current_date }}"' erafn.json`" > erafn.json
+       echo "`jq '.apps[0].versions[0].downloadURL="${{ inputs.download_url }}"' erafn.json`" > erafn.json
+       echo "`jq '.apps[0].downloadURL="${{ inputs.download_url }}"' erafn.json`" > erafn.json
+       echo "`jq '.apps[0].versions[0].localizedDescription="${{ inputs.update_description }}"' erafn.json`" > erafn.json
+       echo "`jq '.apps[0].versionDescription="${{ inputs.update_description }}"' erafn.json`" > erafn.json
+       echo "`jq '.apps[0].tintColor="${{ inputs.tint_color }}"' erafn.json`" > erafn.json
+       echo "`jq '.apps[0].iconURL="${{ inputs.icon_url }}"' erafn.json`" > erafn.json
+    - name: Commit files
+      run: |
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git commit -a -m "Update erafn.json"
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.PERSONAL_TOKEN }}
+        branch: ${{ github.ref }}
