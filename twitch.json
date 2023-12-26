@@ -1,0 +1,31 @@
+{
+  "name": "Twitch+",
+  "identifier": "ftc-payton.twitch-altsource",
+  "sourceURL": "https://raw.githubusercontent.com/ftc-payton/personal-altsources/main/twitch.json",
+  "apps": [
+    {
+      "name": "Twitch",
+      "bundleIdentifier": "tv.twitch",
+      "developerName": "Twitch Interactive, Inc.",
+      "subtitle": "Block ads and add more features on Twitch",
+      "localizedDescription": "A client modification for Twitch that adds many features to the app.",
+      "iconURL": "https://cdn-icons-png.flaticon.com/512/5968/5968819.png",
+      "screenshotURLs": [],
+      "tintColor": "8F00FF",
+      "versions": [
+        {
+          "version": "17.4.1",
+          "date": "2023-12-26",
+          "localizedDescription": "Updated Twitch to 17.4.1",
+          "downloadURL": "https://dl.dropboxusercontent.com/scl/fi/e1x4ec6i53j0j7bz6gog7/Twitch-_-No_Ads-_v.17.4.1__uploadedBy_ipabnb-starfiles.co.ipa?rlkey=o73ugxowszfp41h73klvv6gp3&dl=0",
+          "size": 100000000
+        }
+      ],
+      "version": "17.4.1",
+      "versionDate": "2023-12-26",
+      "versionDescription": "Updated Twitch to 17.4.1",
+      "downloadURL": "https://dl.dropboxusercontent.com/scl/fi/e1x4ec6i53j0j7bz6gog7/Twitch-_-No_Ads-_v.17.4.1__uploadedBy_ipabnb-starfiles.co.ipa?rlkey=o73ugxowszfp41h73klvv6gp3&dl=0",
+      "size": 100000000
+    }
+  ]
+}
