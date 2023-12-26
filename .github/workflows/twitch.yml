@@ -1,0 +1,52 @@
+on:
+  workflow_dispatch:
+    inputs:
+      twitch_version:
+        description: "Twitch Version"
+        default: ""
+        required: true
+        type: string
+      current_date:
+        description: "Date (yyyy-mm-dd)"
+        default: ""
+        required: true
+        type: string
+      download_url:
+        description: "Twitch Download URL"
+        default: ""
+        required: true
+        type: string
+      update_description:
+        description: "Update Description"
+        default: "Updated Twitch to "
+        required: true
+        type: string
+jobs:
+  build:
+    name: Change Version
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+        fetch-depth: 0
+    - name: Update twitch.json
+      run: |
+       echo "`jq '.apps[0].versions[0].version="${{ inputs.twitch_version }}"' twitch.json`" > twitch.json
+       echo "`jq '.apps[0].version="${{ inputs.twitch_version }}"' twitch.json`" > twitch.json
+       echo "`jq '.apps[0].versions[0].date="${{ inputs.current_date }}"' twitch.json`" > twitch.json
+       echo "`jq '.apps[0].versionDate="${{ inputs.current_date }}"' twitch.json`" > twitch.json
+       echo "`jq '.apps[0].versions[0].downloadURL="${{ inputs.download_url }}"' twitch.json`" > twitch.json
+       echo "`jq '.apps[0].downloadURL="${{ inputs.download_url }}"' twitch.json`" > twitch.json
+       echo "`jq '.apps[0].versions[0].localizedDescription="${{ inputs.update_description }}"' twitch.json`" > twitch.json
+       echo "`jq '.apps[0].versionDescription="${{ inputs.update_description }}"' twitch.json`" > twitch.json
+    - name: Commit files
+      run: |
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git commit -a -m "Update twitch.json"
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.PERSONAL_TOKEN }}
+        branch: ${{ github.ref }}
