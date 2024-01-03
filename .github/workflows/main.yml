@@ -1,0 +1,32 @@
+on:
+  schedule:
+    - cron: '* * * * *'
+jobs:
+  build:
+    name: Change Version
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+        fetch-depth: 0
+    - name: Update json
+      run: |
+       rm bhtwitter.json
+       rm erafn.json
+       rm enmity.json
+       rm twitch.json
+       curl https://ftc-payton.github.io/bhtwitter.json --output bhtwitter.json
+       curl https://ftc-payton.github.io/erafn.json --output erafn.json
+       curl https://ftc-payton.github.io/enmity.json --output enmity.json
+       curl https://ftc-payton.github.io/twitch.json --output twitch.json
+    - name: Commit files
+      run: |
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git commit -a -m "Update bhtwitter.json"
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.PERSONAL_TOKEN }}
+        branch: ${{ github.ref }}
