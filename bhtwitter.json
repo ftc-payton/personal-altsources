@@ -5,7 +5,7 @@
   "apps": [
     {
       "name": "X",
-      "bundleIdentifier": "com.atebits.Tweetie2.bh",
+      "bundleIdentifier": "com.atebits.Tweetie2",
       "developerName": "BandarHL",
       "subtitle": "A modification for X (formerly Twitter)",
       "localizedDescription": "A client modification for X that adds many features to the app.",
