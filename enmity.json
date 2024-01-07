@@ -16,17 +16,17 @@
       "tintColor": "6D00FF",
       "versions": [
         {
-          "version": "210.1",
-          "date": "2024-01-03",
+          "version": "211.0",
+          "date": "2024-01-06",
           "localizedDescription": "https://github.com/acquitelol/rosiecord/",
-          "downloadURL": "https://github.com/enmity-mod/tweak/releases/download/v2.2.6/Enmity.ipa",
+          "downloadURL": "https://github.com/acquitelol/rosiecord/releases/download/rosiecord_211/Rosiecord-211_GGSans-Font.ipa",
           "size": 94194608
         }
       ],
-      "version": "210.1",
-      "versionDate": "2024-01-03",
+      "version": "211.0",
+      "versionDate": "2024-01-06",
       "versionDescription": "https://github.com/acquitelol/rosiecord/",
-      "downloadURL": "https://github.com/enmity-mod/tweak/releases/download/v2.2.6/Enmity.ipa",
+      "downloadURL": "https://github.com/acquitelol/rosiecord/releases/download/rosiecord_211/Rosiecord-211_GGSans-Font.ipa",
       "size": 94194608
     }
   ]
